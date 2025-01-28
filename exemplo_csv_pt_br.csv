@@ -1,0 +1,24 @@
+razao_social;
+nome_fantasia;
+cnpj_cpf;
+cep;
+endereco;
+bairro;
+numero;
+complemento;
+cidade;
+estado;
+inscricao_estadual;
+telefone;
+celular;
+contato;
+email;
+observacao;
+site;
+grupo_categorias;
+Timezone;
+equipes
+
+
+
+Cliente yshraelasdasdasd ltda;Cliente ysh;11.111.111/1111-00;7400001;Rua X;Bairro X;11;Complemento X;Goiania;GO;11111;3200-0000;9999-9991;Contato X;emailX@email.com;Observação -ysh alteração cliente;www.sitex.com;grupo teste;America/Belem;[Suporte Belém]

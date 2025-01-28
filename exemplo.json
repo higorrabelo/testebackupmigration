@@ -1,0 +1,112 @@
+
+[
+{
+    "cliente_documento": 22757821091,
+    "cliente_site": "www.xurumela.com",
+    "cliente_observacao": "Corlinas Chovem",
+    "cliente_ativo": true,
+    "cliente_id_integracao": 6135087, 
+    "cliente_pessoa_fisica": {
+        "nome": "Jayme",
+        "data_nascimento": "2002-09-09",
+        "sexo": "M"
+    },
+    "cliente_pessoa_juridica": {
+        "nome_fantasia": "Ovos Fantasia",
+        "razao_social": "Latife Social",
+        "inscricao_estadual": "Qualquer coisa"
+    },
+    "cliente_enderecos": [{
+        "endereco_padrao": true,
+        "endereco_descricao" : "exemplo 1",
+        "endereco_cep" : "00000000",
+        "endereco_logradouro" : "Rua exemplo 1",
+        "endereco_numero" : "123",
+        "endereco_complemento": "Andar exemplo 3",
+        "endereco_bairro": "exemplo 4",
+        "endereco_cidade": "exemplo 5",
+        "endereco_estado": "SP"
+    }],
+    "cliente_contatos": [{
+        "contato_padrao": true,
+        "contato_descricao": "Teste",
+        "contato_email": "milvuz@teste.com.br",
+        "contato_telefone": "(11) 1234-5678",
+        "contato_celular": "(11) 97654-3210",
+        "contato_observacao": "teste de obs"
+    }]
+},
+{
+    "cliente_documento": 47439049004,
+    "cliente_site": "www.xurumela.com",
+    "cliente_observacao": "Jessica Chovem",
+    "cliente_ativo": true,
+    "cliente_id_integracao": 6135087, 
+    "cliente_pessoa_fisica": {
+        "nome": "Jayme",
+        "data_nascimento": "2002-09-09",
+        "sexo": "M"
+    },
+    "cliente_pessoa_juridica": {
+        "nome_fantasia": "celbit Fantasia",
+        "razao_social": "Celbit Social",
+        "inscricao_estadual": "Qualquer coisa"
+    },
+    "cliente_enderecos": [{
+        "endereco_padrao": true,
+        "endereco_descricao" : "exemplo 1",
+        "endereco_cep" : "00000000",
+        "endereco_logradouro" : "Rua exemplo 1",
+        "endereco_numero" : "123",
+        "endereco_complemento": "Andar exemplo 3",
+        "endereco_bairro": "exemplo 4",
+        "endereco_cidade": "exemplo 5",
+        "endereco_estado": "SP"
+    }],
+    "cliente_contatos": [{
+        "contato_padrao": true,
+        "contato_descricao": "Teste",
+        "contato_email": "milvuz@teste.com.br",
+        "contato_telefone": "(11) 1234-5678",
+        "contato_celular": "(11) 97654-3210",
+        "contato_observacao": "teste de obs"
+    }]
+},
+{
+    "cliente_documento": 40737021063,
+    "cliente_site": "www.xurumela.com",
+    "cliente_observacao": "Sandra Chovem",
+    "cliente_ativo": true,
+    "cliente_id_integracao": 6135087, 
+    "cliente_pessoa_fisica": {
+        "nome": "Jayme",
+        "data_nascimento": "2002-09-09",
+        "sexo": "M"
+    },
+    "cliente_pessoa_juridica": {
+        "nome_fantasia": "Jaloo Fantasia",
+        "razao_social": "Jaloo Social",
+        "inscricao_estadual": "Qualquer coisa"
+    },
+    "cliente_enderecos": [{
+        "endereco_padrao": true,
+        "endereco_descricao" : "exemplo 1",
+        "endereco_cep" : "00000000",
+        "endereco_logradouro" : "Rua exemplo 1",
+        "endereco_numero" : "123",
+        "endereco_complemento": "Andar exemplo 3",
+        "endereco_bairro": "exemplo 4",
+        "endereco_cidade": "exemplo 5",
+        "endereco_estado": "SP"
+    }],
+    "cliente_contatos": [{
+        "contato_padrao": true,
+        "contato_descricao": "Teste",
+        "contato_email": "milvuz@teste.com.br",
+        "contato_telefone": "(11) 1234-5678",
+        "contato_celular": "(11) 97654-3210",
+        "contato_observacao": "teste de obs"
+    }]
+}
+]
+
