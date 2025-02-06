@@ -90,6 +90,14 @@ function modeloCriacao(fisOuJus,cliente){
   }
 }
 
+async function tratarCPFouCNPJ(input) {
+  if(input){
+    return input.replace(/\D/g, '');
+  }else{
+    return null;
+  }
+}
+
 async function buscarClientePorDocumento(documento){
   try {
     const response = await axios.get(`https://apiintegracao.milvus.com.br/api/cliente/busca`, {
@@ -99,14 +107,13 @@ async function buscarClientePorDocumento(documento){
         'Content-Type': 'application/json'
       }
     });
-    console.log(response.data)
+    //console.log(response.data.lista.length)
     return response.data
   } catch (error) {
     console.error('Erro ao buscar cliente:', error.response?.data || error.message);
     return null;
   }
 };
-
 
 async function alterarCliente(id, pcliente, token){
 
@@ -142,9 +149,7 @@ async function alterarCliente(id, pcliente, token){
     }
 };
 
-
 var linkCriar = `https://apiintegracao.milvus.com.br/api/cliente/criar`;
-
 
 async function getRecentRecords() {
   try {
@@ -158,12 +163,11 @@ async function getRecentRecords() {
           }
           }
       });
-
       console.log(`Registros encontrados: ${records.length}`);
       return records.map(record => record.toJSON()); // Converte os resultados para objetos JS
   } catch (error) {
       console.error('Erro ao buscar registros:', error);
-      return [];
+      return 0;
   }
 }
 
@@ -172,20 +176,17 @@ var arquivojson = "./clientes.json";
 
 getRecentRecords()
   .then(data => fs.writeFileSync(arquivojson, JSON.stringify({ clientes: data }, null, 2)))
+  .then(()=>{
+    const arquivo = require('./clientes.json');
+  for(var i=0;i<arquivo.clientes.length;i++){
+    var documento = (arquivo.clientes[i].CNPJ)? arquivo.clientes[i].CNPJ : arquivo.clientes[i].CPF
+    var resp =tratarCPFouCNPJ(arquivo.clientes[i].CNPJ).then((rep)=>{
+      console.log(rep)
+      var rip =  buscarClientePorDocumento(rep);
+    })
+    
+    
+  }
+  })
   .catch(err => console.error(err))
 
-
-const arquivo = require('./clientes.json');
-
-for(var i=0;i<arquivo.clientes.length;i++){
-  var documento = (arquivo.clientes[i].CNPJ)? arquivo.clientes[i].CNPJ : arquivo.clientes[i].CPF
-  buscarClientePorDocumento(tratarCPFouCNPJ(arquivo.clientes[i].CNPJ))
-}
-
-function tratarCPFouCNPJ(input) {
-  if(input){
-    return input.replace(/\D/g, '');
-  }else{
-    return null;
-  }
-}
