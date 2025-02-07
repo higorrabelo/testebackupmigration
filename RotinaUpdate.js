@@ -217,8 +217,8 @@ async function main() {
   }
 }
 
-var minuto = 59;
-var hora = 23;
+var minuto = process.env.MINUTO;
+var hora = process.env.HORA;
 cron.schedule(`${minuto} ${hora} * * *`, () => {
   console.log('Executando rotina de atualização...');
   main().catch(console.error);
