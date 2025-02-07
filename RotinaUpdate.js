@@ -134,6 +134,7 @@ async function updateOrCreateClient(clientData) {
   try {
     const document = clientData.CNPJ || clientData.CPF; // Pode ser CNPJ ou CPF
     const clientId = await getMilvusClientId(document);
+    const calendario = new Date()
     const novosClientes = [];
     if (clientId) {
       // Cliente já existe na Milvus, então atualiza
@@ -148,7 +149,7 @@ async function updateOrCreateClient(clientData) {
 
     // Se houver novos clientes, salva no arquivo novos_clientes.json
     if (novosClientes.length > 0) {
-      fs.writeFileSync('novos_clientes.json', JSON.stringify(novosClientes, null, 2), 'utf-8');
+      fs.writeFileSync("./historico/"+`${calendario.getDay()}-${calendario.getMonth()+1}-${calendario.getFullYear()}.json`, JSON.stringify(novosClientes, null, 2), 'utf-8');
       console.log('Arquivo novos_clientes.json criado com os clientes não cadastrados na Milvus.');
     }
   } catch (error) {
@@ -186,8 +187,8 @@ async function updateClientInMilvus(clientId, clientData) {
       nome_fantasia: clientData.NomeFantasia,
       razao_social: clientData.RasSocial,
       cnpj_cpf: clientData.CNPJ || clientData.CPF, // Dependendo do tipo
-      tipo: clientType, // Define se é PJ ou PF
-      // Outros dados...
+      tipo: clientType, // Define se é Juridica ou Fisica
+
     };
 
     const response = await axios.put(`https://apiintegracao.milvus.com.br/api/cliente/${clientId}/alterar`, payload, {
@@ -244,4 +245,7 @@ function formatToSqlDate(date) {
 
 console.log(`Sistema iniciado! A rotina será executada automaticamente às ${hora}:${minuto} todos os dias.`);
 
-console.log('Executando rotina de atualização...');
+
+
+//Teste de execução
+//main().catch(console.error);
